@@ -1,8 +1,8 @@
 public class MyLinkedList{
 
-private int size;
-private Node start;
-private Node end;
+private static int size;
+private static Node start;
+private static Node end;
 
 public MyLinkedList(int inp){
 	start = new Node(inp);
@@ -20,6 +20,15 @@ public boolean add(int value){
 	size++;
 	return true;
 }
+
+public static Node find(int index){
+	Node temp = start;
+	for(int i=0; i<index; i++){
+		temp = temp.nextNode();
+	}
+	return temp;
+}
+
 public String toString(){
 	return "";
 }
