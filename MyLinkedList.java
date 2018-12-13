@@ -22,7 +22,7 @@ public boolean add(int value){
 	return true;
 }
 
-public static Node find(int index){
+public Node find(int index){
 	Node temp = start;
 	for(int i=0; i<index; i++){
 		temp = temp.nextNode();
@@ -39,8 +39,9 @@ public static void main(String[] args) {
 	x.add(4);
 	x.add(999);
 	x.add(6);
+	x.find(1).set(100);
 	// System.out.println(x.size());
-	System.out.println(MyLinkedList.find(2).get());
+	System.out.println(x.find(2).get());
 }
 
 }
@@ -61,6 +62,10 @@ public Node(int data){
 
 public int get(){
 	return this.data;
+}
+
+public void set(int val){
+	this.data = val;
 }
 
 public Node nextNode(){
