@@ -6,7 +6,6 @@ private Node start;
 private Node end;
 
 public MyLinkedList(int inp){
-	// start = new Node(inp);
 }
 
 public int size(){
@@ -70,20 +69,6 @@ private class Node{
 		return data + "";
 	}
 
-	// public Node nextNode(){
-	// 	return next;
-	// }
-	//
-	// public void setNextNode(Node inp){
-	// 	this.next = inp;
-	// }
-
 }
 
 }
-
-
-
-// ┌┐┌┌─┐┌┬┐┌─┐
-// ││││ │ ││├┤
-// ┘└┘└─┘─┴┘└─┘
