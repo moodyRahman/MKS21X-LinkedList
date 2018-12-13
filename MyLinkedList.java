@@ -1,8 +1,8 @@
 public class MyLinkedList{
 
-private static int size;
-private static Node start;
-private static Node end;
+private int size;
+private Node start;
+private Node end;
 
 public MyLinkedList(int inp){
 	start = new Node(inp);
