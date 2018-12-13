@@ -9,7 +9,7 @@ public MyLinkedList(int inp){
 }
 
 public int size(){
-	return new Integer(null);
+	return size;
 }
 public boolean add(int value){
 	return false;
