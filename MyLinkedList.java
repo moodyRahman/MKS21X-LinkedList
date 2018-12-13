@@ -6,6 +6,7 @@ private Node start;
 private Node end;
 
 public MyLinkedList(int inp){
+	// start = new Node(inp);
 }
 
 public int size(){
@@ -15,6 +16,7 @@ public boolean add(int value){
 	if (start == null){
 		start = new Node(value);
 		size++;
+		return true;
 	}
 	Node temp = start;
 	while(temp.next != null){
@@ -41,6 +43,10 @@ public static void main(String[] args) {
 
 	MyLinkedList x = new MyLinkedList(5);
 	ArrayList<Integer> test = new ArrayList<Integer>();
+	x.add(44);
+	x.add(234);
+	x.add(4);
+	System.out.println(x.get(0));
 }
 
 private class Node{
@@ -58,6 +64,10 @@ private class Node{
 
 	public void set(int val){
 		this.data = val;
+	}
+
+	public String toString(){
+		return data + "";
 	}
 
 	// public Node nextNode(){
