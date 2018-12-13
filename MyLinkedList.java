@@ -5,7 +5,7 @@ private int size;
 private Node start;
 private Node end;
 
-public MyLinkedList(int inp){
+public MyLinkedList(){
 }
 
 public int size(){
@@ -40,12 +40,13 @@ public String toString(){
 
 public static void main(String[] args) {
 
-	MyLinkedList x = new MyLinkedList(5);
+	MyLinkedList x = new MyLinkedList();
 	ArrayList<Integer> test = new ArrayList<Integer>();
 	x.add(44);
 	x.add(234);
 	x.add(4);
 	System.out.println(x.get(0));
+	System.out.println(x.size());
 }
 
 private class Node{
