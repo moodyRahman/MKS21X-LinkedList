@@ -12,7 +12,13 @@ public int size(){
 	return size;
 }
 public boolean add(int value){
-	return false;
+	Node temp = start;
+	while(temp.nextNode() != null){
+		temp = temp.nextNode();
+	}
+	temp.setNextNode(new Node(value));
+	size++;
+	return true;
 }
 public String toString(){
 	return "";
@@ -35,6 +41,14 @@ public Node(int data){
 
 public int get(){
 	return this.data;
+}
+
+public Node nextNode(){
+	return next;
+}
+
+public void setNextNode(Node inp){
+	this.next = inp;
 }
 
 }
