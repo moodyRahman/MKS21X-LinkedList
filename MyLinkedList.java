@@ -6,19 +6,21 @@ private Node start;
 private Node end;
 
 public MyLinkedList(int inp){
-	start = new Node(inp);
-	size++;
 }
 
 public int size(){
 	return size;
 }
 public boolean add(int value){
-	Node temp = start;
-	while(temp.nextNode() != null){
-		temp = temp.nextNode();
+	if (start == null){
+		start = new Node(value);
+		size++;
 	}
-	temp.setNextNode(new Node(value));
+	Node temp = start;
+	while(temp.next != null){
+		temp = temp.next;
+	}
+	temp.next = new Node(value);
 	size++;
 	return true;
 }
@@ -26,7 +28,7 @@ public boolean add(int value){
 public Node find(int index){
 	Node temp = start;
 	for(int i=0; i<index; i++){
-		temp = temp.nextNode();
+		temp = temp.next;
 	}
 	return temp;
 }
@@ -39,7 +41,6 @@ public static void main(String[] args) {
 
 	MyLinkedList x = new MyLinkedList(5);
 	ArrayList<Integer> test = new ArrayList<Integer>();
-	test.add(5);  //header
 	x.add(4);
 	test.add(4);
 	// System.out.println(x.find(1).get());
@@ -76,13 +77,13 @@ private class Node{
 		this.data = val;
 	}
 
-	public Node nextNode(){
-		return next;
-	}
-
-	public void setNextNode(Node inp){
-		this.next = inp;
-	}
+	// public Node nextNode(){
+	// 	return next;
+	// }
+	//
+	// public void setNextNode(Node inp){
+	// 	this.next = inp;
+	// }
 
 }
 
