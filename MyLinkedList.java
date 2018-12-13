@@ -59,6 +59,33 @@ public static void main(String[] args) {
 	System.out.println(test);
 }
 
+private class Node{
+
+	private int data;
+	private Node next,prev;
+
+	public Node(int data){
+		this.data = data;
+	}
+
+	public int get(){
+		return this.data;
+	}
+
+	public void set(int val){
+		this.data = val;
+	}
+
+	public Node nextNode(){
+		return next;
+	}
+
+	public void setNextNode(Node inp){
+		this.next = inp;
+	}
+
+}
+
 }
 
 
@@ -66,29 +93,3 @@ public static void main(String[] args) {
 // ┌┐┌┌─┐┌┬┐┌─┐
 // ││││ │ ││├┤
 // ┘└┘└─┘─┴┘└─┘
-class Node{
-
-private int data;
-private Node next,prev;
-
-public Node(int data){
-	this.data = data;
-}
-
-public int get(){
-	return this.data;
-}
-
-public void set(int val){
-	this.data = val;
-}
-
-public Node nextNode(){
-	return next;
-}
-
-public void setNextNode(Node inp){
-	this.next = inp;
-}
-
-}
