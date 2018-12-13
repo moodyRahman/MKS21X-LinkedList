@@ -6,6 +6,7 @@ private static Node end;
 
 public MyLinkedList(int inp){
 	start = new Node(inp);
+	size++;
 }
 
 public int size(){
@@ -32,6 +33,16 @@ public static Node find(int index){
 public String toString(){
 	return "";
 }
+
+public static void main(String[] args) {
+	MyLinkedList x = new MyLinkedList(5);
+	x.add(4);
+	x.add(999);
+	x.add(6);
+	// System.out.println(x.size());
+	System.out.println(MyLinkedList.find(2).get());
+}
+
 }
 
 
