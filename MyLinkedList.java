@@ -19,6 +19,11 @@ public String toString(){
 }
 }
 
+
+
+// ┌┐┌┌─┐┌┬┐┌─┐
+// ││││ │ ││├┤
+// ┘└┘└─┘─┴┘└─┘
 class Node{
 
 private int data;
