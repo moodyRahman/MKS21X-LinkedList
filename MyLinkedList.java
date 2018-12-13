@@ -25,7 +25,7 @@ public boolean add(int value){
 	return true;
 }
 
-public Node find(int index){
+public Node get(int index){
 	Node temp = start;
 	for(int i=0; i<index; i++){
 		temp = temp.next;
@@ -41,23 +41,6 @@ public static void main(String[] args) {
 
 	MyLinkedList x = new MyLinkedList(5);
 	ArrayList<Integer> test = new ArrayList<Integer>();
-	x.add(4);
-	test.add(4);
-	// System.out.println(x.find(1).get());
-	x.add(999);
-	test.add(999);
-
-	x.add(6);
-	test.add(6);
-
-	x.find(1).set(100);
-	test.set(1, 100);
-	// System.out.println(x.size());
-	System.out.println(x.find(0).get());
-	System.out.println(x.find(1).get());
-	System.out.println(x.find(2).get());
-	System.out.println(x.find(3).get());
-	System.out.println(test);
 }
 
 private class Node{
