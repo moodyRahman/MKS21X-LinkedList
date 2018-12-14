@@ -11,19 +11,19 @@ public MyLinkedList(){
 public int size(){
 	return size;
 }
-public void add(int val){
+public boolean add(Integer val){
 	if (start == null){
 		start = new Node(val);
 		size++;
+		return true;
 	}
-	else {
-		Node temp = start;
-		while(temp.next != null){
-			temp = temp.next;
-		}
-		temp.next = new Node(val);
-		size++;	
+	Node temp = start;
+	while(temp.next != null){
+		temp = temp.next;
 	}
+	temp.next = new Node(val);
+	size++;
+	return true;
 }
 
 public Node get(int index){
