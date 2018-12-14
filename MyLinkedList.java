@@ -42,12 +42,10 @@ public boolean add(int index, Integer val){
 public boolean set(int index, Integer val){
 	Node temp = start;
 	Node toInsert = new Node(val);
-	for(int i=0; i < index - 1; i++){
+	for(int i=0; i < index; i++){
 		temp = temp.next;
 	}
-	Node oldNext = temp.next;
-	temp.next = toInsert;
-	toInsert.next = oldNext;
+	temp.set(val);
 	return true;
 }
 
