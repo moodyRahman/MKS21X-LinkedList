@@ -26,6 +26,31 @@ public boolean add(Integer val){
 	return true;
 }
 
+public boolean add(int index, Integer val){
+	Node temp = start;
+	Node toInsert = new Node(val);
+	for(int i=0; i < index - 1; i++){
+		temp = temp.next;
+	}
+	Node oldNext = temp.next;
+	temp.next = toInsert;
+	toInsert.next = oldNext;
+	size++;
+	return true;
+}
+
+public boolean set(int index, Integer val){
+	Node temp = start;
+	Node toInsert = new Node(val);
+	for(int i=0; i < index - 1; i++){
+		temp = temp.next;
+	}
+	Node oldNext = temp.next;
+	temp.next = toInsert;
+	toInsert.next = oldNext;
+	return true;
+}
+
 public Node get(int index){
 	Node temp = start;
 	for(int i=0; i < index; i++){
@@ -54,6 +79,15 @@ public static void main(String[] args) {
 	test.add(234);
 	x.add(4);
 	test.add(4);
+	x.add(99);
+	test.add(99);
+
+	System.out.println(x);
+	System.out.println(test);
+	System.out.println("weird adder");
+
+	x.add(2, 66);
+	test.add(2, 66);
 	System.out.println(x);
 	System.out.println(test);
 }
