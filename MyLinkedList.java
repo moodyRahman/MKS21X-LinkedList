@@ -11,9 +11,9 @@ public MyLinkedList(){
 public int size(){
 	return size;
 }
-public boolean add(int value){
+public boolean add(int val){
 	if (start == null){
-		start = new Node(value);
+		start = new Node(val);
 		size++;
 		return true;
 	}
@@ -21,7 +21,7 @@ public boolean add(int value){
 	while(temp.next != null){
 		temp = temp.next;
 	}
-	temp.next = new Node(value);
+	temp.next = new Node(val);
 	size++;
 	return true;
 }
@@ -51,10 +51,10 @@ public static void main(String[] args) {
 
 private class Node{
 
-	private int data;
+	private Integer data;
 	private Node next,prev;
 
-	public Node(int data){
+	public Node(Integer data){
 		this.data = data;
 	}
 
@@ -62,7 +62,7 @@ private class Node{
 		return this.data;
 	}
 
-	public void set(int val){
+	public void set(Integer val){
 		this.data = val;
 	}
 
