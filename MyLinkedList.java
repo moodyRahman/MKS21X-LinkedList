@@ -27,6 +27,13 @@ public boolean add(Integer val){
 }
 
 public boolean add(int index, Integer val){
+	if (index == 0){
+		Node oldStart = start;
+		start = new Node(val);
+		start.next = oldStart;
+		size++;
+		return true;
+	}
 	Node temp = start;
 	Node toInsert = new Node(val);
 	for(int i=0; i < index - 1; i++){
@@ -80,12 +87,15 @@ public static void main(String[] args) {
 	x.add(99);
 	test.add(99);
 
-	System.out.println(x);
-	System.out.println(test);
-	System.out.println("weird adder");
-
 	x.add(2, 66);
 	test.add(2, 66);
+	x.add(2, 55);
+	test.add(2, 55);
+	x.add(0, 2);
+	test.add(0, 2);
+	x.add(4, 77);
+	test.add(4, 77);
+	
 	System.out.println(x);
 	System.out.println(test);
 }
