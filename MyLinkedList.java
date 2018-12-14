@@ -11,31 +11,37 @@ public MyLinkedList(){
 public int size(){
 	return size;
 }
-public boolean add(int val){
+public void add(int val){
 	if (start == null){
 		start = new Node(val);
 		size++;
-		return true;
 	}
-	Node temp = start;
-	while(temp.next != null){
-		temp = temp.next;
+	else {
+		Node temp = start;
+		while(temp.next != null){
+			temp = temp.next;
+		}
+		temp.next = new Node(val);
+		size++;	
 	}
-	temp.next = new Node(val);
-	size++;
-	return true;
 }
 
 public Node get(int index){
 	Node temp = start;
-	for(int i=0; i<index; i++){
+	for(int i=0; i < index; i++){
 		temp = temp.next;
 	}
 	return temp;
 }
 
 public String toString(){
-	return "";
+	String output = "";
+	Node temp = start;
+	for(int i=0; i < size; i++){
+		output += temp.get() + ", ";
+		temp = temp.next;
+	}
+	return output;
 }
 
 public static void main(String[] args) {
@@ -43,10 +49,13 @@ public static void main(String[] args) {
 	MyLinkedList x = new MyLinkedList();
 	ArrayList<Integer> test = new ArrayList<Integer>();
 	x.add(44);
+	test.add(44);
 	x.add(234);
+	test.add(234);
 	x.add(4);
-	System.out.println(x.get(0));
-	System.out.println(x.size());
+	test.add(4);
+	System.out.println(x);
+	System.out.println(test);
 }
 
 private class Node{
@@ -54,15 +63,15 @@ private class Node{
 	private Integer data;
 	private Node next,prev;
 
-	public Node(Integer data){
+	private Node(Integer data){
 		this.data = data;
 	}
 
-	public int get(){
+	private int get(){
 		return this.data;
 	}
 
-	public void set(Integer val){
+	private void set(Integer val){
 		this.data = val;
 	}
 
