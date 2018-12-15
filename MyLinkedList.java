@@ -33,6 +33,9 @@ private Node findNode(int index){
 }
 
 public boolean add(int index, Integer val){
+	if (index < 0 || index >= size){
+		throw new IndexOutOfBoundsException();
+	}
 	Node toAdd = new Node(val);
 	Node temp = findNode(index);
 	temp.prev.next = toAdd;
