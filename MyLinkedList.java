@@ -84,6 +84,7 @@ public Integer remove(int index){
 	Node toRemove = findNode(index);
 	toRemove.prev.next = toRemove.next;
 	toRemove.next.prev = toRemove.prev;
+	size--;
 	return toRemove.data;
 }
 
@@ -94,6 +95,7 @@ public boolean remove (Integer val){
 			Node toRemove = temp;
 			toRemove.prev.next = toRemove.next;
 			toRemove.next.prev = toRemove.prev;
+			size--;
 			return true;
 		}
 		temp = temp.next;
