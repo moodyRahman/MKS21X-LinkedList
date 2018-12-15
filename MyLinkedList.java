@@ -77,6 +77,13 @@ public int IndexOf(Integer val){
 	return -1;
 }
 
+public Integer remove(int index){
+	Node toRemove = findNode(index);
+	toRemove.prev.next = toRemove.next;
+	toRemove.next.prev = toRemove.prev;
+	return toRemove.data;
+}
+
 public String toString(){
 	String output = " ";
 	Node temp = start.next;
@@ -103,6 +110,8 @@ public static void main(String[] args) {
 	System.out.println(x);
 	System.out.println(x.contains(8));
 	System.out.println(x.IndexOf(5555));
+	x.remove(x.IndexOf(6));
+	System.out.println(x);
 
 }
 
