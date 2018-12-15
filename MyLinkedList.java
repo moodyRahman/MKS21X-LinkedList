@@ -84,6 +84,20 @@ public Integer remove(int index){
 	return toRemove.data;
 }
 
+public boolean remove (Integer val){
+	Node temp = start.next;
+	while(temp != null && temp != end){
+		if (temp.data.equals(val)){
+			Node toRemove = temp;
+			toRemove.prev.next = toRemove.next;
+			toRemove.next.prev = toRemove.prev;
+			return true;
+		}
+		temp = temp.next;
+	}
+	return false;
+}
+
 public String toString(){
 	String output = " ";
 	Node temp = start.next;
@@ -111,6 +125,11 @@ public static void main(String[] args) {
 	System.out.println(x.contains(8));
 	System.out.println(x.IndexOf(5555));
 	x.remove(x.IndexOf(6));
+	System.out.println(x);
+	x.add(44);
+	x.add(78);
+	System.out.println(x);
+	System.out.println(x.remove(new Integer(55)));
 	System.out.println(x);
 
 }
