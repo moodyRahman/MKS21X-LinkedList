@@ -143,14 +143,6 @@ private class Node{
 		this.data = data;
 	}
 
-	private int get(){
-		return this.data;
-	}
-
-	private void set(Integer val){
-		this.data = val;
-	}
-
 	public String toString(){
 		return data + "";
 	}
