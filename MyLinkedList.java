@@ -53,6 +53,17 @@ public Integer get(int index){
 	return findNode(index).data;
 }
 
+public boolean contains(Integer val){
+	Node temp = start.next;
+	while(temp != null && temp != end){
+		if (temp.data.equals(val)){
+			return true;
+		}
+		temp = temp.next;
+	}
+	return false;
+}
+
 public String toString(){
 	String output = " ";
 	Node temp = start.next;
@@ -77,6 +88,7 @@ public static void main(String[] args) {
 	System.out.println(x);
 	x.set(2, 7);
 	System.out.println(x);
+	System.out.println(x.contains(8));
 
 }
 
