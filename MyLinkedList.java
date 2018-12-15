@@ -64,6 +64,19 @@ public boolean contains(Integer val){
 	return false;
 }
 
+public int IndexOf(Integer val){
+	int counter = 0;
+	Node temp = start.next;
+	while(temp != null && temp != end){
+		if (temp.data.equals(val)){
+			return counter;
+		}
+		temp = temp.next;
+		counter++;
+	}
+	return -1;
+}
+
 public String toString(){
 	String output = " ";
 	Node temp = start.next;
@@ -89,6 +102,7 @@ public static void main(String[] args) {
 	x.set(2, 7);
 	System.out.println(x);
 	System.out.println(x.contains(8));
+	System.out.println(x.IndexOf(5555));
 
 }
 
