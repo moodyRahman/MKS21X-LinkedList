@@ -42,22 +42,15 @@ public boolean add(int index, Integer val){
 	return true;
 }
 
-public boolean set(int index, Integer val){
-	Node temp = start;
-	Node toInsert = new Node(val);
-	for(int i=0; i < index; i++){
-		temp = temp.next;
-	}
-	temp.set(val);
-	return true;
+public Integer set(int index, Integer val){
+	Node temp = findNode(index);
+	int out = temp.data;
+	temp.data = val;
+	return out;
 }
 
-public Node get(int index){
-	Node temp = start;
-	for(int i=0; i < index; i++){
-		temp = temp.next;
-	}
-	return temp;
+public Integer get(int index){
+	return findNode(index).data;
 }
 
 public String toString(){
@@ -81,6 +74,8 @@ public static void main(String[] args) {
 	x.add(55);
 	System.out.println(x);
 	x.add(2, 8);
+	System.out.println(x);
+	x.set(2, 7);
 	System.out.println(x);
 
 }
