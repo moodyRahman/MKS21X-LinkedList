@@ -24,12 +24,17 @@ public boolean add(Integer val){
 	return true;
 }
 
-public boolean add(int index, Integer val){
-	Node toAdd = new Node(val);
+private Node findNode(int index){
 	Node temp = start;
 	for (int x = 0; x < index + 1; x++){
 		temp = temp.next;
 	}
+	return temp;
+}
+
+public boolean add(int index, Integer val){
+	Node toAdd = new Node(val);
+	Node temp = findNode(index);
 	temp.prev.next = toAdd;
 	toAdd.prev = temp.prev;
 	toAdd.next = temp;
