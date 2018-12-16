@@ -32,10 +32,14 @@ private Node findNode(int index){
 	return temp;
 }
 
-public boolean add(int index, Integer val){
-	if (index < 0 || index >= size){
+private void ipch(int val){
+	if (val < 0 || val >= size){
 		throw new IndexOutOfBoundsException();
 	}
+}
+
+public boolean add(int index, Integer val){
+	ipch(index);
 	Node toAdd = new Node(val);
 	Node temp = findNode(index);
 	temp.prev.next = toAdd;
@@ -53,6 +57,7 @@ public Integer set(int index, Integer val){
 }
 
 public Integer get(int index){
+	ipch(index);
 	return findNode(index).data;
 }
 
@@ -88,7 +93,7 @@ public Integer remove(int index){
 	return toRemove.data;
 }
 
-public boolean remove (Integer val){
+public boolean remove(Integer val){
 	Node temp = start.next;
 	while(temp != null && temp != end){
 		if (temp.data.equals(val)){
