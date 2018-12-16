@@ -41,7 +41,11 @@ private void ipch(int val){
 	}
 }
 
-public boolean add(int index, Integer val){
+public void add(int index, Integer val){
+	if (index == size - 1){
+		add(val);
+		return;
+	}
 	ipch(index);
 	Node toAdd = new Node(val);
 	Node temp = findNode(index);
@@ -49,7 +53,7 @@ public boolean add(int index, Integer val){
 	toAdd.prev = temp.prev;
 	toAdd.next = temp;
 	temp.prev = toAdd;
-	return true;
+	size++;
 }
 
 public Integer set(int index, Integer val){
@@ -134,6 +138,7 @@ public static void main(String[] args) {
 	x.add(55);
 	System.out.println(x);
 	x.add(2, 8);
+	System.out.println(x.size());
 	System.out.println(x);
 	x.set(2, 7);
 	System.out.println(x);
