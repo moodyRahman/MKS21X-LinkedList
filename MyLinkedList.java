@@ -42,11 +42,9 @@ private void ipch(int val){
 }
 
 public void add(int index, Integer val){
-	if (index == size - 1){
-		add(val);
-		return;
+	if (index < 0 || index > size){
+		throw new IndexOutOfBoundsException();
 	}
-	ipch(index);
 	Node toAdd = new Node(val);
 	Node temp = findNode(index);
 	temp.prev.next = toAdd;
