@@ -6,7 +6,7 @@ private Node start = new Node(null);
 private Node end = new Node(null);
 
 public MyLinkedList(){
-	start.next = end;
+	start.next = end; //linking start and ends
 	end.prev = start;
 }
 
@@ -14,6 +14,9 @@ public int size(){
 	return size;
 }
 public boolean add(Integer val){
+	//make some new node and link the oldLast to new
+	//and new to end
+	//repeat for prev nodes
 	Node toAdd = new Node(val);
 	Node oldLast = end.prev;
 	oldLast.next = toAdd;
@@ -50,6 +53,7 @@ public boolean add(int index, Integer val){
 }
 
 public Integer set(int index, Integer val){
+	ipch(index);
 	Node temp = findNode(index);
 	int out = temp.data;
 	temp.data = val;
@@ -72,7 +76,7 @@ public boolean contains(Integer val){
 	return false;
 }
 
-public int IndexOf(Integer val){
+public int indexOf(Integer val){
 	int counter = 0;
 	Node temp = start.next;
 	while(temp != null && temp != end){
@@ -86,6 +90,7 @@ public int IndexOf(Integer val){
 }
 
 public Integer remove(int index){
+	ipch(index);
 	Node toRemove = findNode(index);
 	toRemove.prev.next = toRemove.next;
 	toRemove.next.prev = toRemove.prev;
@@ -133,8 +138,8 @@ public static void main(String[] args) {
 	x.set(2, 7);
 	System.out.println(x);
 	System.out.println(x.contains(8));
-	System.out.println(x.IndexOf(5555));
-	x.remove(x.IndexOf(6));
+	// System.out.println(x.IndexOf(5555));
+	x.remove(x.indexOf(6));
 	System.out.println(x);
 	x.add(44);
 	x.add(78);
@@ -143,6 +148,7 @@ public static void main(String[] args) {
 	System.out.println(x);
 
 }
+
 
 private class Node{
 
