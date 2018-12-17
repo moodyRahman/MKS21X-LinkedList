@@ -13,6 +13,15 @@ public MyLinkedList(){
 public int size(){
 	return size;
 }
+
+public Node getStart(){
+	return start;
+}
+
+public Node getEnd(){
+	return end;
+}
+
 public boolean add(Integer val){
 	//make some new node and link the oldLast to new
 	//and new to end
