@@ -126,6 +126,17 @@ public String toString(){
 	return output;
 }
 
+public String toStringRev(){
+	String output = " ";
+	Node temp = end.prev;
+		while(temp != null && temp != start){
+			output += temp.data;
+			output += ", ";
+			temp = temp.prev;
+		}
+	return output;
+}
+
 public static void main(String[] args) {
 
 	MyLinkedList x = new MyLinkedList();
@@ -149,6 +160,7 @@ public static void main(String[] args) {
 	System.out.println(x);
 	System.out.println(x.remove(new Integer(55)));
 	System.out.println(x);
+	System.out.println(x.toStringRev());
 
 }
 
