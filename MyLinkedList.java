@@ -14,11 +14,11 @@ public int size(){
 	return size;
 }
 
-public Node getStart(){
+private Node getStart(){
 	return start;
 }
 
-public Node getEnd(){
+private Node getEnd(){
 	return end;
 }
 
