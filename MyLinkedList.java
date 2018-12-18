@@ -22,6 +22,13 @@ private Node getEnd(){
 	return end;
 }
 
+public void extend(MyLinkedList other){
+	this.end.prev.next = other.start.next;
+	other.start.next.prev = this.end.prev;
+	this.end = other.end;
+	this.size = this.size + other.size();
+}
+
 public boolean add(Integer val){
 	//make some new node and link the oldLast to new
 	//and new to end
@@ -168,6 +175,15 @@ public static void main(String[] args) {
 	x.add(78);
 	System.out.println(x);
 	System.out.println(x.remove(new Integer(55)));
+	System.out.println(x);
+	System.out.println(x.toStringRev());
+	System.out.println("#######");
+	MyLinkedList z = new MyLinkedList();
+	z.add(6);
+	z.add(5);
+	System.out.println(x);
+	System.out.println(z);
+	x.extend(z);
 	System.out.println(x);
 	System.out.println(x.toStringRev());
 
